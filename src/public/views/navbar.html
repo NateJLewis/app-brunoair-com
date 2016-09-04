@@ -1,0 +1,39 @@
+<md-toolbar class="md-menu-toolbar">
+    <div layout="row">
+        <md-toolbar-filler
+            layout=""
+            layout-align="center center"
+            style="background-color: #ffffff;">
+            <md-icon
+                md-svg-icon="logo"
+                aria-label="Bruno Air"
+                class="logo_svg"></md-icon>
+        </md-toolbar-filler>
+        <span flex></span>
+        <md-menu-bar>
+            <md-menu>
+                <button class="md-icon-button"
+                    aria-label="Open menu"
+                    ng-click="$mdOpenMenu()">
+                    <md-icon
+                        md-menu-origin
+                        md-svg-icon="menu"></md-icon>
+                </button>
+                <md-menu-content width="3">
+                    <md-menu-item ng-show="navbar.route=='specs'">
+                        <md-button ui-sref="dimensions">Search Dimensions</md-button>
+                    </md-menu-item>
+                    <md-menu-item ng-show="navbar.route=='dimensions'">
+                        <md-button ui-sref="specs">Search Specs</md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ng-click="rebuildPricebook()">Reload G-Sheet</md-button>
+                    </md-menu-item>
+                    <!-- <md-menu-item ng-if="navbar.login == true ">
+                        <md-button ng-click="signOut()">Logout</md-button>
+                    </md-menu-item> -->
+                </md-menu-content>
+            </md-menu>
+        </md-menu-bar>
+    </div>
+</md-toolbar>

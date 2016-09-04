@@ -1,0 +1,82 @@
+<div ng-include="navbar.url"></div>
+<md-content id="content" class="md-padding" layout="column">
+    <md-card layout="column" class="signed_in_card">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Welcome
+                    {{profile.name}}</span>
+                <span class="md-subhead">Search by selecting unit specs...</span>
+            </md-card-title-text>
+            <md-card-title-media>
+                <div class="md-media-sm card-media">
+                    <img class="g_apps_img" ng-src="{{profile.image}}" alt="{{profile.name}}"/>
+                </div>
+            </md-card-title-media>
+        </md-card-title>
+    </md-card>
+    <md-card class="specs_card" layout="column">
+        <md-card-content class="specs_card_content">
+            <!-- <p class="md-body-2">Search by code name</p> -->
+        </md-card-content>
+        <md-card-actions layout="column" layout-align="start">
+            <md-input-container class="md-input-container">
+                <label>Code</label>
+                <md-select ng-model="codeName" md-on-close="clearSearchTerm()" data-md-container-class="selectHeader">
+                    <md-select-header class="select-header">
+                        <input class="select-search md-text" ng-model="searchTerm" type="search" placeholder="Search code names...">
+                    </md-select-header>
+                    <md-optgroup label="Code">
+                        <md-option ng-repeat="row in rows | filter:searchTerm | unique: 'specs.code'" ng-value="row.specs.code">{{row.specs.code}}</md-option>
+                    </md-optgroup>
+                </md-select>
+            </md-input-container>
+        </md-card-actions>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-primary md-raised" ng-click="toggleLeft();findCodeName(codeName)">Results</md-button>
+        </md-card-actions>
+    </md-card>
+    <md-card class="specs_card" layout="column">
+        <md-card-content class="specs_card_content">
+            <!-- <p class="md-body-2">Search by brand name</p> -->
+        </md-card-content>
+        <md-card-actions layout="column" layout-align="start">
+            <md-input-container class="md-input-container">
+                <label>Brand</label>
+                <md-select ng-model="brandName" md-on-close="clearSearchTerm()" data-md-container-class="selectHeader">
+                    <md-select-header class="select-header">
+                        <input class="select-search md-text" ng-model="searchTerm" type="search" placeholder="Search brand names...">
+                    </md-select-header>
+                    <md-optgroup label="Brand">
+                        <md-option ng-repeat="row in rows | filter:searchTerm | unique: 'specs.brand'" ng-value="row.specs.brand">{{row.specs.brand}}</md-option>
+                    </md-optgroup>
+                </md-select>
+            </md-input-container>
+        </md-card-actions>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-primary md-raised" ng-click="toggleLeft();findBrandName(brandName)">Results</md-button>
+        </md-card-actions>
+    </md-card>
+    <md-card class="specs_card" layout="column">
+        <md-card-content class="specs_card_content">
+            <!-- <p class="md-body-2">Search by unit type</p> -->
+        </md-card-content>
+        <md-card-actions layout="column" layout-align="start">
+            <md-input-container class="md-input-container">
+                <label>Unit Type</label>
+                <md-select ng-model="unitType" md-on-close="clearSearchTerm()" data-md-container-class="selectHeader">
+                    <md-select-header class="select-header">
+                        <input class="select-search md-text" ng-model="searchTerm" type="search" placeholder="Search brand names...">
+                    </md-select-header>
+                    <md-optgroup label="Unit Type">
+                        <md-option ng-repeat="row in rows | filter:searchTerm | unique: 'specs.unit_type'" ng-value="row.specs.unit_type">{{row.specs.unit_type}}</md-option>
+                    </md-optgroup>
+                </md-select>
+            </md-input-container>
+        </md-card-actions>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-primary md-raised" ng-click="toggleLeft();findUnitType(unitType)">Results</md-button>
+        </md-card-actions>
+    </md-card>
+</md-content>
+<div ng-include="sidebar.url"></div>
+<div ng-include="login.url"></div>

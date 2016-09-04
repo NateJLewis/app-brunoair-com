@@ -1,0 +1,56 @@
+{
+    "name": "app-brunoair-com",
+    "version": "1.0.0",
+    "description": "App for Bruno Air Technicians / Employees",
+    "main": "dist",
+    "scripts": {
+        "dev": "DEBUG=app-brunoair-com, node src/index.js",
+        "build": "",
+        "start": "node dist/index.js",
+        "test": ""
+    },
+    "engines": {
+        "node": "4.5.0"
+    },
+    "homepage": "https://app.brunoair.com",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/brunoair/app-brunoair-com.git"
+    },
+    "author": {
+        "name": "Nate Lewis",
+        "email": "nlewis@brunoair.com"
+    },
+    "license": "Unlicense",
+    "devDependencies": {
+        "angular": "^1.5.8",
+        "angular-animate": "^1.5.8",
+        "angular-aria": "^1.5.8",
+        "angular-filter": "^0.5.11",
+        "angular-material": "^1.1.1",
+        "angular-material-data-table": "^0.10.9",
+        "angular-messages": "^1.5.8",
+        "angular-ui-router": "^0.3.1",
+        "autoprefixer": "^6.4.1",
+        "grunt": "^0.4.0",
+        "grunt-cli": "^1.2.0",
+        "grunt-contrib-concat": "^1.0.1",
+        "grunt-contrib-cssmin": "^1.0.2",
+        "grunt-contrib-htmlmin": "^2.0.0",
+        "grunt-contrib-uglify": "^2.0.0",
+        "grunt-contrib-watch": "^1.0.0",
+        "grunt-postcss": "^0.8.0",
+        "load-grunt-tasks": "^3.5.2",
+        "lodash": "^4.15.0"
+    },
+    "keywords": [
+    "Bruno",
+    "Air",
+    "App",
+    "Technicians"
+  ],
+    "dependencies": {
+        "body-parser": "^1.15.2",
+        "express": "^4.14.0"
+    }
+}

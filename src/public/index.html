@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appBrunoAir" >
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <script src="https://apis.google.com/js/platform.js"></script>
+    </head>
+    <body id="serviceTechApp" layout="column">
+        <spinner ng-show='stateIsLoading'></spinner>
+        <main ng-show='!stateIsLoading' ui-view></main>
+        <script type="text/javascript" src="js/libs.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<div ng-include="navbar.url"></div>
+<md-content id="content" class="md-padding" layout="column">
+    <md-card  layout="column" class="signed_in_card">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Welcome {{profile.name}}</span>
+                <span class="md-subhead">Search by choosing unit dimensions....</span>
+            </md-card-title-text>
+            <md-card-title-media>
+                <div class="md-media-sm card-media">
+                    <img class="g_apps_img" ng-src="{{profile.image}}" alt="{{profile.name}}"/>
+                </div>
+            </md-card-title-media>
+        </md-card-title>
+    </md-card>
+    <md-card layout="column">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Max Location Dimensions</span>
+                <span class="md-subhead">Enter height, width, and depth to filter results.</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content layout="row" layout-align="center center">
+            <div class="md-media-sm card-media">
+                <md-icon class="air_handler_dimensions" md-svg-icon="ahd" aria-label="Air Handler Dimensions"></md-icon>
+            </div>
+            <md-card-actions layout="column">
+                <md-input-container class="md-input-container">
+                    <label class="md-caption">AHU Height</label>
+                    <input class="md-caption" type="text" ng-model="maxDimensions.air_handler.height"/>
+                </md-input-container>
+                <md-input-container class="md-input-container">
+                    <label class="md-caption">AHU Width</label>
+                    <input class="md-caption" type="text" ng-model="maxDimensions.air_handler.width"/>
+                </md-input-container>
+                <md-input-container class="md-input-container">
+                    <label class="md-caption">AHU Depth</label>
+                    <input class="md-caption" type="text" ng-model="maxDimensions.air_handler.depth"/>
+                </md-input-container>
+                <md-input-container class="md-input-container">
+                    <label class="md-caption">CU Height</label>
+                    <input class="md-caption" type="text" ng-model="maxDimensions.condensing_unit.height"/>
+                </md-input-container>
+                <md-input-container class="md-input-container">
+                    <label class="md-caption">CU Width</label>
+                    <input class="md-caption" type="text" ng-model="maxDimensions.condensing_unit.width"/>
+                </md-input-container>
+                <md-input-container class="md-input-container">
+                    <label class="md-caption">CU Depth</label>
+                    <input class="md-caption" type="text" ng-model="maxDimensions.condensing_unit.depth"/>
+                </md-input-container>
+            </md-card-actions>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="center">
+            <md-button ng-click="clearAh()">Clear AH</md-button>
+            <md-button ng-click="clearCu()">Clear CU</md-button>
+            <md-button class="md-primary md-raised" ng-click="toggleLeft();findValue(maxDimensions)">Results</md-button>
+        </md-card-actions>
+    </md-card>
+</md-content>
+<div ng-include="sidebar.url"></div>
+<div ng-include="login.url"></div>

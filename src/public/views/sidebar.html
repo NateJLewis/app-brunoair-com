@@ -1,0 +1,75 @@
+<md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop md-whiteframe="4" layout="row" style="min-width: 410px;">
+    <md-content layout-padding>
+        <md-toolbar id="results_toolbar" class="md-table-toolbar md-primary">
+            <div class="md-toolbar-tools">
+                <span>Results ({{resultLength}})</span>
+                <span flex></span>
+                <md-button class="md-accent md-raised" ng-click="toggleLeft(); clearForm()">Close Results</md-button>
+            </div>
+        </md-toolbar>
+        <md-table-container>
+            <table md-table md-row-select="options.rowSelection" multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">
+                <thead md-head md-order="query.order" md-on-reorder="onReorder">
+                    <tr md-row>
+                        <th md-column md-order-by="specs.code">Code</th>
+                        <th md-column md-order-by="specs.brand">Brand</th>
+                        <th md-column md-order-by="specs.unit_type">Unit Type</th>
+                        <th md-column md-order-by="specs.style">Style</th>
+                        <th md-column md-order-by="specs.category">Category</th>
+                        <th md-column md-order-by="specs.serie">Serie</th>
+                        <th md-column md-order-by="specs.ton">Ton</th>
+                        <th md-column md-order-by="specs.seer">Seer</th>
+                        <th md-column md-order-by="air_handler.model">AH Model</th>
+                        <th md-column md-order-by="air_handler.height">AH Height</th>
+                        <th md-column md-order-by="air_handler.width">AH Width</th>
+                        <th md-column md-order-by="air_handler.depth">AH Depth</th>
+                        <th md-column md-order-by="condensing_unit.model">CU Model</th>
+                        <th md-column md-order-by="condensing_unit.height">CU Height</th>
+                        <th md-column md-order-by="condensing_unit.width">CU Width</th>
+                        <th md-column md-order-by="condensing_unit.depth">CU Depth</th>
+                        <th md-column md-order-by="costs.unit_cost">Unit Cost</th>
+                        <th md-column md-order-by="costs.total_cost">Total Cost</th>
+                        <th md-column md-order-by="costs.cost2200">2200</th>
+                        <th md-column md-order-by="costs.cost4200">4200</th>
+                        <th md-column md-order-by="costs.cost6400">6400</th>
+                        <th md-column md-order-by="costs.cost8600">8600</th>
+                        <th md-column md-order-by="costs.cost1080">1080</th>
+                        <th md-column md-order-by="costs.cost1280">1280</th>
+                        <th md-column md-order-by="costs.cost1410">1410</th>
+                    </tr>
+                </thead>
+                <tbody md-body>
+                    <tr ng-repeat="result in results |  orderBy: query.order | limitTo: query.limit : (query.page - 1) * query.limit" md-row md-select="result" md-select-id="key" md-on-deselect="deselect">
+                        <td md-cell>{{result.specs.code}}</td>
+                        <td md-cell>{{result.specs.brand}}</td>
+                        <td md-cell>{{result.specs.unit_type}}</td>
+                        <td md-cell>{{result.specs.style}}</td>
+                        <td md-cell>{{result.specs.category}}</td>
+                        <td md-cell>{{result.specs.serie}}</td>
+                        <td md-cell>{{result.specs.ton}}</td>
+                        <td md-cell>{{result.specs.seer}}</td>
+                        <td md-cell>{{result.air_handler.model}}</td>
+                        <td md-cell>{{result.air_handler.height}}</td>
+                        <td md-cell>{{result.air_handler.width}}</td>
+                        <td md-cell>{{result.air_handler.depth}}</td>
+                        <td md-cell>{{result.condensing_unit.model}}</td>
+                        <td md-cell>{{result.condensing_unit.height}}</td>
+                        <td md-cell>{{result.condensing_unit.width}}</td>
+                        <td md-cell>{{result.condensing_unit.depth}}</td>
+                        <td md-cell>{{result.costs.unit_cost}}</td>
+                        <td md-cell>{{result.costs.total_cost}}</td>
+                        <td md-cell>{{result.costs.cost2200 }}</td>
+                        <td md-cell>{{result.costs.cost4200 }}</td>
+                        <td md-cell>{{result.costs.cost6400 }}</td>
+                        <td md-cell>{{result.costs.cost8600 }}</td>
+                        <td md-cell>{{result.costs.cost1080 }}</td>
+                        <td md-cell>{{result.costs.cost1280 }}</td>
+                        <td md-cell>{{result.costs.cost1410 }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </md-table-container>
+
+        <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{resultLength}}" md-on-paginate="onPaginate" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks"></md-table-pagination>
+    </md-content>
+</md-sidenav>

@@ -1,0 +1,21 @@
+<md-content id="content" class="md-padding"
+    layout="row"
+    ng-show='login.isLoginPage==true' >
+    <md-card id="login_card">
+        <md-card-title id="login_title">
+            <md-card-title-text>
+                <span class="md-headline">Welcome Bruno Air Technicians</span>
+                <span class="md-subhead">To begin login with your Bruno Air email.</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content
+            class="md-padding"
+            layout="row"
+            layout-align="center center">
+            <google-sign-in
+                content="googleLogin"
+                button-id="googleSignIn"
+                options="options"></google-sign-in>
+        </md-card-content>
+    </md-card>
+</md-content>
